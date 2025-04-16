@@ -207,7 +207,7 @@ export class LanguageDetectionWorkerClient extends Disposable {
 			LanguageDetectionWorkerHost.setChannel(workerClient, {
 				$getIndexJsUri: async () => this.getIndexJsUri(),
 				$getLanguageId: async (languageIdOrExt) => this.getLanguageId(languageIdOrExt),
-				$sendTelemetryEvent: async (languages, confidences, timeSpent) => this.sendTelemetryEvent(languages, confidences, timeSpent),
+// 				$sendTelemetryEvent: async (languages, confidences, timeSpent) => this.sendTelemetryEvent(languages, confidences, timeSpent),
 				$getRegexpModelUri: async () => this.getRegexpModelUri(),
 				$getModelJsonUri: async () => this.getModelJsonUri(),
 				$getWeightsUri: async () => this.getWeightsUri(),

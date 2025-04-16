@@ -1428,7 +1428,7 @@ export class TypeAheadAddon extends Disposable implements ITerminalAddon {
 				"predictionAccuracy" : { "classification": "SystemMetaData", "purpose": "PerformanceAndHealth", "isMeasurement": true }
 			}
 		 */
-		this._telemetryService.publicLog('terminalLatencyStats', {
+// 		this._telemetryService.publicLog('terminalLatencyStats', {
 			...stats.latency,
 			predictionAccuracy: stats.accuracy,
 		});

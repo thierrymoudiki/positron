@@ -68,11 +68,11 @@ export class TelemetryService extends Disposable implements ITelemetryService {
 	}
 
 	publicLog(eventName: string, data?: ITelemetryData) {
-		this.impl.publicLog(eventName, data);
+// 		this.impl.publicLog(eventName, data);
 	}
 
 	publicLog2<E extends ClassifiedEvent<OmitMetadata<T>> = never, T extends IGDPRProperty = never>(eventName: string, data?: StrictPropertyCheck<T, E>) {
-		this.publicLog(eventName, data as ITelemetryData);
+// 		this.publicLog(eventName, data as ITelemetryData);
 	}
 
 	publicLogError(errorEventName: string, data?: ITelemetryData) {

@@ -619,7 +619,7 @@ export class ExtensionEditor extends EditorPane {
 			]
 		}
 		*/
-		this.telemetryService.publicLog('extensionGallery:openExtension', { ...extension.telemetryData, ...recommendationsData });
+// 		this.telemetryService.publicLog('extensionGallery:openExtension', { ...extension.telemetryData, ...recommendationsData });
 
 	}
 

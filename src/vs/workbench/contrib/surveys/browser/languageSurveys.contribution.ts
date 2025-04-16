@@ -99,7 +99,7 @@ class LanguageSurvey extends Disposable {
 			[{
 				label: localize('takeShortSurvey', "Take Short Survey"),
 				run: () => {
-					telemetryService.publicLog(`${data.surveyId}.survey/takeShortSurvey`);
+// 					telemetryService.publicLog(`${data.surveyId}.survey/takeShortSurvey`);
 					openerService.open(URI.parse(`${data.surveyUrl}?o=${encodeURIComponent(platform)}&v=${encodeURIComponent(productService.version)}&m=${encodeURIComponent(telemetryService.machineId)}`));
 					storageService.store(IS_CANDIDATE_KEY, false, StorageScope.APPLICATION, StorageTarget.USER);
 					storageService.store(SKIP_VERSION_KEY, productService.version, StorageScope.APPLICATION, StorageTarget.USER);
@@ -107,14 +107,14 @@ class LanguageSurvey extends Disposable {
 			}, {
 				label: localize('remindLater', "Remind Me Later"),
 				run: () => {
-					telemetryService.publicLog(`${data.surveyId}.survey/remindMeLater`);
+// 					telemetryService.publicLog(`${data.surveyId}.survey/remindMeLater`);
 					storageService.store(SESSION_COUNT_KEY, sessionCount - 3, StorageScope.APPLICATION, StorageTarget.USER);
 				}
 			}, {
 				label: localize('neverAgain', "Don't Show Again"),
 				isSecondary: true,
 				run: () => {
-					telemetryService.publicLog(`${data.surveyId}.survey/dontShowAgain`);
+// 					telemetryService.publicLog(`${data.surveyId}.survey/dontShowAgain`);
 					storageService.store(IS_CANDIDATE_KEY, false, StorageScope.APPLICATION, StorageTarget.USER);
 					storageService.store(SKIP_VERSION_KEY, productService.version, StorageScope.APPLICATION, StorageTarget.USER);
 				}

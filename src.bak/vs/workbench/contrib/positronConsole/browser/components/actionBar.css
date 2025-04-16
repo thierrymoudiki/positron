@@ -1,0 +1,16 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (C) 2025 Posit Software, PBC. All rights reserved.
+ *  Licensed under the Elastic License 2.0. See LICENSE.txt for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.positron-console .action-bar {
+	height: 32px;
+}
+
+.state-label {
+	white-space: nowrap;
+}
+
+.action-bar-button-icon.interrupt::before {
+	color: var(--vscode-errorForeground);
+}

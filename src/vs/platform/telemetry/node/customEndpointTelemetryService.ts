@@ -64,7 +64,7 @@ export class CustomEndpointTelemetryService implements ICustomEndpointTelemetryS
 
 	publicLog(telemetryEndpoint: ITelemetryEndpoint, eventName: string, data?: ITelemetryData) {
 		const customTelemetryService = this.getCustomTelemetryService(telemetryEndpoint);
-		customTelemetryService.publicLog(eventName, data);
+// 		customTelemetryService.publicLog(eventName, data);
 	}
 
 	publicLogError(telemetryEndpoint: ITelemetryEndpoint, errorEventName: string, data?: ITelemetryData) {

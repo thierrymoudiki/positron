@@ -28,7 +28,7 @@ export class DebugTelemetry {
 				"launchJsonExists": { "classification": "SystemMetaData", "purpose": "FeatureInsight", "isMeasurement": true }
 			}
 		*/
-		this.telemetryService.publicLog('debugSessionStart', {
+// 		this.telemetryService.publicLog('debugSessionStart', {
 			type: dbgr.type,
 			breakpointCount: this.model.getBreakpoints().length,
 			exceptionBreakpoints: this.model.getExceptionBreakpoints(),
@@ -53,7 +53,7 @@ export class DebugTelemetry {
 				"watchExpressionsCount": { "classification": "SystemMetaData", "purpose": "FeatureInsight", "isMeasurement": true }
 			}
 		*/
-		this.telemetryService.publicLog('debugSessionStop', {
+// 		this.telemetryService.publicLog('debugSessionStop', {
 			type: session && session.configuration.type,
 			success: adapterExitEvent.emittedStopped || breakpoints.length === 0,
 			sessionLengthInSeconds: adapterExitEvent.sessionLengthInSeconds,

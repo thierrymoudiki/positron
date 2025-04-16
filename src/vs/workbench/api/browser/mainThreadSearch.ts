@@ -73,7 +73,7 @@ export class MainThreadSearch implements MainThreadSearchShape {
 		provider.handleFindMatch(session, data);
 	}
 	$handleTelemetry(eventName: string, data: any): void {
-		this._telemetryService.publicLog(eventName, data);
+// 		this._telemetryService.publicLog(eventName, data);
 	}
 }
 

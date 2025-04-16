@@ -1,0 +1,210 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (C) 2024 Posit Software, PBC. All rights reserved.
+ *  Licensed under the Elastic License 2.0. See LICENSE.txt for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.data-grid-row-cell .content .column-summary {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	display: grid;
+	overflow: hidden;
+	position: absolute;
+	grid-template-rows: [basic-info] 34px [profile-info] 1fr [end-rows];
+}
+
+.data-grid-row-cell .content .column-summary .cursor-indicator {
+	top: 2px;
+	right: 2px;
+	bottom: 2px;
+	left: 2px;
+	z-index: -1;
+	opacity: 50%;
+	position: absolute;
+	border-radius: 4px;
+}
+
+.data-grid-row-cell .content .column-summary:hover .cursor-indicator {
+	background-color: var(--vscode-positronDataGrid-selectionBackground);
+}
+
+.data-grid-row-cell .content .column-summary .cursor-indicator.cursor {
+	background-color: var(--vscode-positronDataGrid-selectionBackground);
+}
+
+.data-grid-row-cell .content .column-summary .cursor-indicator.cursor.focused {
+	opacity: 100%;
+	border: 1px solid var(--vscode-positronDataGrid-selectionBorder);
+}
+
+/* basic-info */
+
+.data-grid-row-cell .content .column-summary .basic-info {
+	display: grid;
+	align-items: center;
+	white-space: nowrap;
+	grid-row: basic-info / profile-info;
+	grid-template-columns: [left-gutter] 5px [expand-collapse] 25px [datatype-icon] 25px [title] 1fr [sparkline] min-content [missing-values] min-content [right-gutter] 12px [end-columns];
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .expand-collapse-button {
+	width: 25px;
+	height: 25px;
+	display: flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	grid-column: expand-collapse / datatype-icon;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .expand-collapse-button.disabled {
+	opacity: 0%;
+	cursor: default;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .expand-collapse-button:focus {
+	outline: none !important;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .expand-collapse-button:focus-visible {
+	border-radius: 6px;
+	outline: 1px solid var(--vscode-focusBorder) !important;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .data-type-icon {
+	width: 25px;
+	height: 25px;
+	opacity: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	grid-column: datatype-icon / title;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-name {
+	overflow: hidden;
+	font-weight: 600;
+	margin-right: 4px;
+	text-overflow: ellipsis;
+	grid-column: title / sparkline;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-name .whitespace {
+	opacity: 50%;
+}
+
+/* column-sparkline */
+
+.data-grid-row-cell .content .column-summary .basic-info .column-sparkline {
+	pointer-events: none;
+	grid-column: sparkline / missing-values;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-sparkline .loading-sparkline .loading-indicator {
+	fill: var(--vscode-positronDataExplorer-columnNullPercentGraphBackgroundFill);
+	stroke: var(--vscode-positronDataExplorer-columnNullPercentGraphBackgroundStroke);
+	opacity: 0.5;
+	animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+	0% { opacity: 0.2; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.2; }
+}
+
+/* column-null-percent */
+
+.data-grid-row-cell .content .column-summary .basic-info .column-null-percent {
+	display: grid;
+	grid-gap: 5px;
+	align-items: center;
+	grid-column: missing-values / right-gutter;
+	grid-template-columns: [percent] 35px [graph] 25px [end];
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-null-percent .text-percent {
+	font-size: 90%;
+	text-align: right;
+	grid-column: percent / graph;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-null-percent .text-percent.zero {
+	opacity: 50%;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-null-percent .graph-percent {
+	display: flex;
+	grid-column: graph / end;
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-null-percent .graph-percent .empty {
+	fill: transparent;
+	stroke: var(--vscode-positronDataExplorer-columnNullPercentGraphBackgroundStroke);
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-null-percent .graph-percent .background {
+	fill: var(--vscode-positronDataExplorer-columnNullPercentGraphBackgroundFill);
+	stroke: var(--vscode-positronDataExplorer-columnNullPercentGraphBackgroundStroke);
+}
+
+.data-grid-row-cell .content .column-summary .basic-info .column-null-percent .graph-percent .indicator {
+	fill: var(--vscode-positronDataExplorer-columnNullPercentGraphIndicatorFill);
+}
+
+/* column-profile-info */
+
+.data-grid-row-cell .content .column-summary .column-profile-info {
+	display: grid;
+	margin: 0 auto;
+	pointer-events: none;
+	grid-row: profile-info / end-rows;
+	grid-template-rows: [sparkline] min-content [tabular-info] min-content [end-rows];
+	grid-template-columns: [left-gutter] 55px [sparkline-tabular-info] 1fr [right-gutter] 30px [end-column];
+}
+
+.data-grid-row-cell .content .column-summary .column-profile-info .column-profile-sparkline {
+	margin-bottom: 10px;
+	grid-row: sparkline / tabular-info;
+	grid-column: sparkline-tabular-info / right-gutter;
+}
+
+.data-grid-row-cell .content .column-summary .column-profile-info .tabular-info {
+	margin: 0 auto;
+	display: grid;
+	min-width: 200px;
+	overflow: hidden;
+	grid-row: tabular-info / end-rows;
+	grid-column: sparkline-tabular-info / right-gutter;
+	grid-template-columns: [labels] min-content [spacer] 1fr [values] auto [end-columns];
+}
+
+.data-grid-row-cell .content .column-summary .column-profile-info .tabular-info .labels {
+	margin-right: 10px;
+	grid-column: labels / spacer;
+}
+
+.data-grid-row-cell .content .column-summary .column-profile-info .tabular-info .labels .label {
+	height: 20px;
+}
+
+.data-grid-row-cell .content .column-summary .column-profile-info .tabular-info .values {
+	overflow: hidden;
+	text-align: right;
+	grid-column: values / end-columns;
+}
+
+.data-grid-row-cell .content .column-summary .column-profile-info .tabular-info .values .value-placeholder {
+	height: 20px;
+}
+
+.data-grid-row-cell .content .column-summary .column-profile-info .tabular-info .values .value {
+	height: 20px;
+	font-weight: 600;
+	overflow: hidden;
+	text-wrap: nowrap;
+	text-overflow: ellipsis;
+	font-variant-numeric: tabular-nums;
+}

@@ -967,7 +967,7 @@ function reportTelemetry(telemetryService: ITelemetryService, eventName: string,
 			]
 		}
 	*/
-	telemetryService.publicLog(eventName, {
+// 	telemetryService.publicLog(eventName, {
 		...extensionData,
 		source,
 		duration,

@@ -559,7 +559,7 @@ export class InstallAction extends ExtensionAction {
 				]
 			}
 		*/
-		this.telemetryService.publicLog('extensions:action:install', { ...this.extension.telemetryData, actionId: this.id });
+// 		this.telemetryService.publicLog('extensions:action:install', { ...this.extension.telemetryData, actionId: this.id });
 
 		const extension = await this.install(this.extension);
 

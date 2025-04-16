@@ -1366,7 +1366,7 @@ abstract class AbstractExtensionGalleryService implements IExtensionGalleryServi
 				]
 			}
 		*/
-		this.telemetryService.publicLog('galleryService:downloadVSIX', { ...data, duration: new Date().getTime() - startTime });
+// 		this.telemetryService.publicLog('galleryService:downloadVSIX', { ...data, duration: new Date().getTime() - startTime });
 	}
 
 	async downloadSignatureArchive(extension: IGalleryExtension, location: URI): Promise<void> {

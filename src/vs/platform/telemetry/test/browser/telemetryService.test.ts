@@ -97,7 +97,7 @@ suite('TelemetryService', () => {
 		const testAppender = new TestTelemetryAppender();
 		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService(), TestProductService);
 
-		service.publicLog('testPrivateEvent');
+// 		service.publicLog('testPrivateEvent');
 		assert.strictEqual(testAppender.getEventsCount(), 1);
 
 		service.dispose();
@@ -109,7 +109,7 @@ suite('TelemetryService', () => {
 		const testAppender = new TestTelemetryAppender();
 		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService(), TestProductService);
 
-		service.publicLog('testEvent');
+// 		service.publicLog('testEvent');
 		assert.strictEqual(testAppender.getEventsCount(), 1);
 		assert.strictEqual(testAppender.events[0].eventName, 'testEvent');
 		assert.notStrictEqual(testAppender.events[0].data, null);
@@ -121,7 +121,7 @@ suite('TelemetryService', () => {
 		const testAppender = new TestTelemetryAppender();
 		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService(), TestProductService);
 
-		service.publicLog('testEvent', {
+// 		service.publicLog('testEvent', {
 			'stringProp': 'property',
 			'numberProp': 1,
 			'booleanProp': true,
@@ -148,7 +148,7 @@ suite('TelemetryService', () => {
 			commonProperties: { foo: 'JA!', get bar() { return Math.random() % 2 === 0; } }
 		}, new TestConfigurationService(), TestProductService);
 
-		service.publicLog('testEvent');
+// 		service.publicLog('testEvent');
 		const [first] = testAppender.events;
 
 		assert.strictEqual(Object.keys(first.data).length, 2);
@@ -165,7 +165,7 @@ suite('TelemetryService', () => {
 			commonProperties: { foo: 'JA!', get bar() { return Math.random() % 2 === 0; } }
 		}, new TestConfigurationService(), TestProductService);
 
-		service.publicLog('testEvent', { hightower: 'xl', price: 8000 });
+// 		service.publicLog('testEvent', { hightower: 'xl', price: 8000 });
 		const [first] = testAppender.events;
 
 		assert.strictEqual(Object.keys(first.data).length, 4);
@@ -196,7 +196,7 @@ suite('TelemetryService', () => {
 		const testAppender = new TestTelemetryAppender();
 		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService(), TestProductService);
 
-		service.publicLog('testEvent');
+// 		service.publicLog('testEvent');
 		assert.strictEqual(testAppender.getEventsCount(), 1);
 		assert.strictEqual(testAppender.events[0].eventName, 'testEvent');
 
@@ -710,7 +710,7 @@ suite('TelemetryService', () => {
 	test('Telemetry Service sends events when telemetry is on', sinonTestFn(function () {
 		const testAppender = new TestTelemetryAppender();
 		const service = new TelemetryService({ appenders: [testAppender] }, new TestConfigurationService(), TestProductService);
-		service.publicLog('testEvent');
+// 		service.publicLog('testEvent');
 		assert.strictEqual(testAppender.getEventsCount(), 1);
 		service.dispose();
 	}));

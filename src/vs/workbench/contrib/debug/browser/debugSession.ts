@@ -1189,7 +1189,7 @@ export class DebugSession implements IDebugSession, IDisposable {
 							data = filterExceptionsFromTelemetry(event.body.data);
 						}
 
-						this.customEndpointTelemetryService.publicLog(telemetryEndpoint, event.body.output, data);
+// 						this.customEndpointTelemetryService.publicLog(telemetryEndpoint, event.body.output, data);
 					}
 
 					return;

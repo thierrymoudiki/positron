@@ -238,7 +238,7 @@ export class ExtensionRecommendationsService extends Disposable implements IExte
 							]
 						}
 					*/
-					this.telemetryService.publicLog('extensionGallery:install:recommendations', { ...e.source.telemetryData, recommendationReason: recommendationReason.reasonId });
+// 					this.telemetryService.publicLog('extensionGallery:install:recommendations', { ...e.source.telemetryData, recommendationReason: recommendationReason.reasonId });
 				}
 			}
 		}

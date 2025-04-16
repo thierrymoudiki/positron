@@ -758,7 +758,7 @@ CommandsRegistry.registerCommand({
 					"debugType" : { "classification": "SystemMetaData", "purpose": "FeatureInsight" }
 				}
 			*/
-			telemetryService.publicLog('debug/didViewMemory', {
+// 			telemetryService.publicLog('debug/didViewMemory', {
 				debugType: debugService.getModel().getSession(sessionId)?.configuration.type,
 			});
 

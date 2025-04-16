@@ -1,0 +1,77 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (C) 2023-2024 Posit Software, PBC. All rights reserved.
+ *  Licensed under the Elastic License 2.0. See LICENSE.txt for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.data-explorer-panel .data-explorer {
+	min-width: 0;
+	min-height: 0;
+	display: grid;
+	overflow: hidden;
+	grid-row: data-explorer / status-bar;
+	grid-template-rows: [main-row] 1fr [end-rows];
+}
+
+.data-explorer-panel .data-explorer.summary-on-left {
+	grid-template-columns: [left-column] min-content [collapsed-left-spacer] min-content [splitter] max-content [collapsed-right-spacer] min-content [right-column] 1fr [end-columns];
+}
+
+.data-explorer-panel .data-explorer.summary-on-right {
+	grid-template-columns: [left-column] 1fr [collapsed-left-spacer] min-content [splitter] max-content [collapsed-right-spacer] min-content [right-column] min-content [end-columns];
+}
+
+.data-explorer-panel .data-explorer .column-name-exemplar {
+	font-weight: var(--positron-data-grid-column-header-title-font-weight);
+}
+
+.data-explorer-panel .data-explorer .type-name-exemplar {
+	font-size: var(--positron-data-grid-column-header-description-font-size);
+}
+
+.data-explorer-panel .data-explorer .sort-index-exemplar {
+	font-size: var(--positron-data-grid-column-header-sort-index-font-size);
+	font-weight: var(--positron-data-grid-column-header-sort-index-font-weight);
+	font-variant-numeric: var(--positron-data-grid-column-header-sort-index-font-variant-numeric);
+}
+
+.data-explorer-panel .data-explorer .left-column {
+	min-width: 0;
+	min-height: 0;
+	display: grid;
+	grid-row: main-row / end-rows;
+	grid-column: left-column / collapsed-left-spacer;
+}
+
+.data-explorer-panel .data-explorer .collapsed-left-spacer {
+	width: 10px;
+	grid-row: main-row / end-rows;
+	grid-column: collapsed-left-spacer / splitter;
+	background-color: var(--vscode-positronDataExplorer-contrastBackground);
+}
+
+.data-explorer-panel .data-explorer .splitter {
+	display: grid;
+	grid-row: main-row / end-rows;
+	grid-column: splitter / collapsed-right-spacer;
+}
+
+.data-explorer-panel .data-explorer .splitter .vertical-splitter {
+	border-left: 1px solid var(--vscode-positronDataExplorer-border);
+	border-right: 1px solid var(--vscode-positronDataExplorer-border);
+	background-color: var(--vscode-positronDataExplorer-contrastBackground);
+}
+
+.data-explorer-panel .data-explorer .collapsed-right-spacer {
+	width: 10px;
+	grid-row: main-row / end-rows;
+	grid-column: collapsed-right-spacer / right-column;
+	background-color: var(--vscode-positronDataExplorer-contrastBackground);
+}
+
+.data-explorer-panel .data-explorer .right-column {
+	min-width: 0;
+	min-height: 0;
+	display: grid;
+	grid-row: main-row / end-rows;
+	grid-column: right-column / end-columns;
+}

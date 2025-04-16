@@ -76,7 +76,7 @@ class WorkbenchAssignmentServiceTelemetry implements IExperimentationTelemetry {
 				"ABExp.queriedFeature": { "classification": "SystemMetaData", "purpose": "FeatureInsight", "comment": "The experimental feature being queried" }
 			}
 		*/
-		this.telemetryService.publicLog(eventName, data);
+// 		this.telemetryService.publicLog(eventName, data);
 	}
 }
 

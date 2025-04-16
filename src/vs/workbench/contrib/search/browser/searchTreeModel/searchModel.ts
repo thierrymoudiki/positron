@@ -265,7 +265,7 @@ export class SearchModelImpl extends Disposable implements ISearchModel {
 				}
 			*/
 			event?.dispose();
-			this.telemetryService.publicLog('searchResultsFirstRender', { duration: Date.now() - start });
+// 			this.telemetryService.publicLog('searchResultsFirstRender', { duration: Date.now() - start });
 		});
 
 		try {
@@ -288,7 +288,7 @@ export class SearchModelImpl extends Disposable implements ISearchModel {
 					"duration" : { "classification": "SystemMetaData", "purpose": "PerformanceAndHealth", "isMeasurement": true }
 				}
 			*/
-			this.telemetryService.publicLog('searchResultsFinished', { duration: Date.now() - start });
+// 			this.telemetryService.publicLog('searchResultsFinished', { duration: Date.now() - start });
 		}
 	}
 
@@ -330,7 +330,7 @@ export class SearchModelImpl extends Disposable implements ISearchModel {
 				"searchOnTypeEnabled" : { "classification": "SystemMetaData", "purpose": "FeatureInsight" }
 			}
 		*/
-		this.telemetryService.publicLog('searchResultsShown', {
+// 		this.telemetryService.publicLog('searchResultsShown', {
 			count: this._searchResult.count(),
 			fileCount: this._searchResult.fileCount(),
 			options,

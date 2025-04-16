@@ -628,7 +628,7 @@ export abstract class AbstractTimerService implements ITimerService {
 				]
 			}
 		*/
-		this._telemetryService.publicLog('startupTimeVaried', metrics);
+// 		this._telemetryService.publicLog('startupTimeVaried', metrics);
 	}
 
 	protected _shouldReportPerfMarks(): boolean {

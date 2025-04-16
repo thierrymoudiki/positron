@@ -159,7 +159,7 @@ class NativeLocalizationWorkbenchContribution extends BaseLocalizationWorkbenchC
 					"language": { "classification": "SystemMetaData", "purpose": "FeatureInsight" }
 				}
 			*/
-			this.telemetryService.publicLog('languagePackSuggestion:popup', { userReaction, language: locale });
+// 			this.telemetryService.publicLog('languagePackSuggestion:popup', { userReaction, language: locale });
 		};
 
 		const searchAction = {

@@ -34,11 +34,11 @@ export class ServerTelemetryService extends TelemetryService implements IServerT
 		if (this._injectedTelemetryLevel < TelemetryLevel.USAGE) {
 			return;
 		}
-		return super.publicLog(eventName, data);
+// 		return super.publicLog(eventName, data);
 	}
 
 	override publicLog2<E extends ClassifiedEvent<OmitMetadata<T>> = never, T extends IGDPRProperty = never>(eventName: string, data?: StrictPropertyCheck<T, E>) {
-		return this.publicLog(eventName, data as ITelemetryData | undefined);
+// 		return this.publicLog(eventName, data as ITelemetryData | undefined);
 	}
 
 	override publicLogError(errorEventName: string, data?: ITelemetryData) {

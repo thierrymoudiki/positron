@@ -449,7 +449,7 @@ export class Extension implements IExtension {
 			if (this.gallery.assets.readme) {
 				return this.galleryService.getReadme(this.gallery, token);
 			}
-			this.telemetryService.publicLog('extensions:NotFoundReadMe', this.telemetryData);
+// 			this.telemetryService.publicLog('extensions:NotFoundReadMe', this.telemetryData);
 		}
 
 		if (this.type === ExtensionType.System) {

@@ -135,26 +135,12 @@ export function isLoggingOnly(productService: IProductService, environmentServic
  * @returns OFF, ERROR, ON
  */
 export function getTelemetryLevel(configurationService: IConfigurationService): TelemetryLevel {
-	const newConfig = configurationService.getValue<TelemetryConfiguration>(TELEMETRY_SETTING_ID);
-	const crashReporterConfig = configurationService.getValue<boolean | undefined>(TELEMETRY_CRASH_REPORTER_SETTING_ID);
-	const oldConfig = configurationService.getValue<boolean | undefined>(TELEMETRY_OLD_SETTING_ID);
+	// Always return off
+	return TelemetryLevel.NONE;
+}
 
-	// If `telemetry.enableCrashReporter` is false or `telemetry.enableTelemetry' is false, disable telemetry
-	if (oldConfig === false || crashReporterConfig === false) {
-		return TelemetryLevel.NONE;
-	}
-
-	// Maps new telemetry setting to a telemetry level
-	switch (newConfig ?? TelemetryConfiguration.ON) {
-		case TelemetryConfiguration.ON:
-			return TelemetryLevel.USAGE;
-		case TelemetryConfiguration.ERROR:
-			return TelemetryLevel.ERROR;
-		case TelemetryConfiguration.CRASH:
-			return TelemetryLevel.CRASH;
-		case TelemetryConfiguration.OFF:
-			return TelemetryLevel.NONE;
-	}
+export function isPseudonymousInstrumentation(eventName: string): boolean {
+	return false;
 }
 
 export interface Properties {

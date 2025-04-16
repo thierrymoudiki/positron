@@ -94,7 +94,7 @@ export class WorkspaceTags implements IWorkbenchContribution {
 				]
 			}
 		*/
-		this.telemetryService.publicLog('workspce.tags', tags);
+// 		this.telemetryService.publicLog('workspce.tags', tags);
 	}
 
 	private reportRemoteDomains(workspaceUris: URI[]): void {
@@ -120,7 +120,7 @@ export class WorkspaceTags implements IWorkbenchContribution {
 					"domains" : { "classification": "SystemMetaData", "purpose": "FeatureInsight" }
 				}
 			*/
-			this.telemetryService.publicLog('workspace.remotes', { domains: list.sort() });
+// 			this.telemetryService.publicLog('workspace.remotes', { domains: list.sort() });
 		}, onUnexpectedError);
 	}
 
@@ -199,7 +199,7 @@ export class WorkspaceTags implements IWorkbenchContribution {
 						]
 					}
 				*/
-				this.telemetryService.publicLog('workspace.azure', tags);
+// 				this.telemetryService.publicLog('workspace.azure', tags);
 			}
 		}).then(undefined, onUnexpectedError);
 	}
